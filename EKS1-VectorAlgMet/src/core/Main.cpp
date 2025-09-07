@@ -1,14 +1,14 @@
 #include <iostream>;
-#include "../../include/VectorAlgMet_EKS1.h"
+#include "../../include/Vector_Ex1.h"
 
 using namespace std;
 
 int main() {
 
 
-    //VectorAlgMet_EKS1<int>    iVec;
-    //VectorAlgMet_EKS1<char>   cVec;
-    VectorAlgMet_EKS1<string> sVec;
+    //Vector_Ex1<int>    iVec;
+    //Vector_Ex1<char>   cVec;
+    Vector_Ex1<string> sVec;
 
     sVec.push_back("AA");    
     sVec.push_back("BB");

@@ -1,3 +1,4 @@
+#pragma once
 /**
  *   Program Example No. 1 - Vector (self-made simple class).
  *
@@ -23,6 +24,8 @@
  *
  *   NOTE: To increase readability, member functions are deliberately
  *   NOT commented in full Doxygen style.
+ * 
+ * @author   Frode Haug, NTNU
  */
 
 #include <iostream>   // cout
@@ -36,7 +39,7 @@ using namespace std;
  *  capacity (capacity) and the current number of elements (size).
  */
 template <typename T>
-class VectorAlgMet_EKS1 {
+class Vector_Ex1 {
 private:
     T* data;        // Pointer to array of type 'T'.
     int capacityVal; // Maximum length (capacity).
@@ -44,14 +47,14 @@ private:
 
 public:
     // Constructor: allocates storage and sets count = 0.
-    VectorAlgMet_EKS1(const int length = 200) { //length cant be edited becasue const
+    Vector_Ex1(const int length = 200) { //length cant be edited becasue const
         this->data = new T[length]; //length of the list - creating new list using pointer data
         this->capacityVal = length; //maximum contained values
         this->count = 0; //size within object declearation
     }
 
     // Destructor: releases allocated memory by deleting the list created in constructor this->data = new T[length]
-    ~VectorAlgMet_EKS1() {
+    ~Vector_Ex1() {
         delete[] this->data;
     }
 

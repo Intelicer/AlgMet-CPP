@@ -10,3 +10,4 @@ project ("AlgMet")
 # Include sub-projects.
 add_subdirectory ("EKS1-VectorAlgMet")
 add_subdirectory ("EKS2-StackAlgMet")
+add_subdirectory ("EKS3-QueueAlgMet")
