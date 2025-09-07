@@ -8,4 +8,5 @@ endif()
 project ("AlgMet")
 
 # Include sub-projects.
-add_subdirectory ("VectorAlgMet-EKS1")
+add_subdirectory ("EKS1-VectorAlgMet")
+add_subdirectory ("EKS2-StackAlgMet")
