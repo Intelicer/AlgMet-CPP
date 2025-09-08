@@ -32,25 +32,28 @@ int main() {
 
     iStack.pop();  // empty stack
 
+    // ======================   STACK WITH CHARs:   ============================
     cout << "--------------------------------" << "\n";
 
 
     cout << "Char" << "\n";
-    // ======================   STACK WITH CHARs:   ============================
-    cStack.push('G');
+    cStack.push('G');//G in
     cStack.display();
-    cStack.pop();
+    cStack.pop(); //G out
     cStack.pop();   // At the last 'pop' the stack is empty.
 
+
     // ======================   STACK WITH STRINGs:   ==========================
+
+    cout << "--------------------------------" << "\n";
     string st;
-    sStack.push("Banana mash");
+    sStack.push("Banana mash"); // text in stack
 
-    st = sStack.pop();
-    cout << "\npopped text: '" << st << "'\n\n";
+    st = sStack.pop(); // st stores the text from stack by using method pop
+    cout << "popped text: " << st << "\n";
 
-    st = sStack.pop();   // At the last 'pop' the stack is empty:
-    cout << "popped text: '" << st << "'\n\n";
+    st = sStack.pop();   // At the last 'pop' the stack is empty and the string store an empty value "";
+    cout << "popped text: " << st << "\n";
 
     return 0;
 }

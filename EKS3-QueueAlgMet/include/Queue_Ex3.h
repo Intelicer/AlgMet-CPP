@@ -43,11 +43,11 @@ private:
 public:
     // Initializes members using default parameter:
     Queue_Ex3(const int length = 200) {
-        this->data = new T[length];
-        this->capacity = length;
-        this->count = 0;
-        this->front = 0;
-        this->back = 0;
+        this->data = new T[length]; //set a size for list T
+        this->capacity = length; //capacity of the list
+        this->count = 0; // total elements count
+        this->front = 0; // index of first element pos that goes out of queue
+        this->back = 0; // referse where element pos will be added in queue 
     }
 
     ~Queue_Ex3() {
@@ -56,16 +56,16 @@ public:
     }
 
     void display() const {  // Prints the ENTIRE Queue content:
-        int index = this->front;
+        int index = this->front; // gets the index of first element pos in queue
         for (int i = 0; i < this->count; i++) {
-            cout << index << ": " << this->data[index++] << "  ";
+            cout << index << ": " << this->data[index++] << "  " << "\n";
             if (index == this->capacity) {
                 index = 0;
             }
         }
-        cout << "\n\t'this->count': " << this->count
-            << "\t'this->front': " << this->front
-            << "\t'this->back': " << this->back << '\n';
+        cout << "\ncount (Total elements): " << this->count
+            << "\nfront (First element pos): " << this->front
+            << "\nback (Next element added to queue pos): " << this->back << '\n';
     }
 
     bool empty() const {
@@ -79,7 +79,7 @@ public:
             value = this->data[this->front++];  // Save first. Increase to next.
             this->count--;                // Decrease the total this->count.
             if (this->front == this->capacity) {
-                this->front = 0;            // Wrap to start if needed.
+                this->front = 0;            // Wrap to start if needed to start from the first in queue
             }
             return value;           // Return the saved element.
         }
@@ -90,15 +90,17 @@ public:
     }
 
     void put(const T t) {     // Inserts (if possible) element at the this->back:
-        if (this->count < this->capacity) { // Still space:
-            this->data[this->back++] = t;     // Insert at this->back. Increase to next.
-            this->count++;              // Increase total this->count.
-            if (this->back == this->capacity) {
-                this->back = 0;           // Wrap to start if needed.
+        if (this->count < this->capacity) { // if there is space in the capacity of the list
+            this->data[this->back++] = t;     // Added element at the end of the list
+            this->count++;              // Increase total element count
+            if (this->back == this->capacity) { // if the back element pos == the total capacity
+                                                // then set back to 0
+                this->back = 0;                 // to wrap from start if needed.
             }
         }
         else {
             cout << "\nQueue is already full!\n\n";  // Custom message.
         }
     }
+
 };

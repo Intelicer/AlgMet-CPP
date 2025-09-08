@@ -62,7 +62,7 @@ public:
     // Returns (if possible) the top element:
     T pop() {
         if (!empty()) {              // Not empty (i.e. elements remain):
-            return (this->data[--this->count]);  // Last element has index: this->count-1
+            return (this->data[--this->count]);  // Last element has index: (this->count-1)
         }
         else {
             cout << "\nStack is empty!\n\n";   // Custom message ??
