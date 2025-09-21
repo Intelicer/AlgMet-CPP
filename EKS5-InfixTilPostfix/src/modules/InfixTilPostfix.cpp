@@ -15,7 +15,7 @@ void InfixTilPostfix::read_from_user() {
     //  Read ALL characters, including ' ' (spaces), until '\n':
     while ((this->ch = cin.get()) != '\n') {
         if (this->ch == ')') {                //  Closing parenthesis found:
-            cout << stackObj.top();     //  Print top of the stack.
+            cout << this->stackObj.top();     //  Print top of the stack.
             stackObj.pop();             //  Remove the operator.
         }
         else if (this->ch == '+' || this->ch == '*') {
@@ -24,7 +24,7 @@ void InfixTilPostfix::read_from_user() {
 
         //  While digits in ONE number:
         while (this->ch >= '0' && this->ch <= '9') {  // Print multi-digit number:
-            cout << ch;                   // Print ONE digit.
+            cout << this->ch;                   // Print ONE digit.
             this->ch = cin.get();               // Read next digit/character. if removing this you will be stuck in a loop of 8
         }
 
