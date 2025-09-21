@@ -56,7 +56,6 @@ int main() {
 	string st;
 
 	stringQueue.put("BananaMash");
-https://chatgpt.com/g/g-p-68b5dde781488191bad435220c419638-algmet-mahmoud/c/68be7180-600c-8322-8b27-c1d79e03914f
 	st = stringQueue.get();
 	cout << "\nRetrieved text: '" << st << "'\n\n";
 
