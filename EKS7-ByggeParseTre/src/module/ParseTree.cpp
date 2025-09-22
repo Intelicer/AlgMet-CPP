@@ -1,8 +1,5 @@
 #include "../../include/ParseTree.h"
 
-/*
-* 
-*/
 void traversePostorder(const Node* node) { 
     if (node) {                          //  Pointer to a real node:
         traversePostorder(node->left);   //  Visit left subtree/child.
