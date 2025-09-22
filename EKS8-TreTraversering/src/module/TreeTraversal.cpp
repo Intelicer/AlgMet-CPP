@@ -9,7 +9,7 @@ void  visit(const Node* node) {
     cout << ' ' << node->ID;
 }
 
-Node* buildTree() {
+Node* buildTree(int z) {
     /*   Builds the tree:                                     A=0
                                                   /                 \
                                              B=1                     C=2
@@ -45,7 +45,7 @@ Node* buildTree() {
     nodes[8]->left = nodes[13];
     //O
     nodes[9]->right = nodes[14];
-    return nodes[0];
+    return nodes[z];
 }
 
 
@@ -71,7 +71,7 @@ void traverseLevelorder(Node* node) {
         while (!gQueue.empty()) {                //  Still nodes left:
             node = gQueue.front();
             gQueue.pop();                        //  Take out the first node.
-            visit(node);                         //  Visit it.
+            visit(node);                         //  Visit it. and print its id
             if (node->left) {
                 gQueue.push(node->left);         //  Put left subtree
             }

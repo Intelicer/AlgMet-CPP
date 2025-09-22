@@ -9,7 +9,7 @@ int main() {
     string tekst = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     cout << "\n\nThe text:        " << tekst << '\n';
-    t1.reverser(tekst, 0, tekst.length() - 1);
+    t1.reverser(tekst, 0, tekst.length() - 1); //length -1 because we start at 0 so the last should be 16
     cout << "Reversed:        " << tekst << '\n';
 
 

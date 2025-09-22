@@ -46,7 +46,7 @@ void visit(const Node* node);
  *
  *  @return   Pointer to the root of the built tree
  */
-Node* buildTree();
+Node* buildTree(int z); //edited this because inorder needs a start point for G node
 
 
 
@@ -81,6 +81,9 @@ void  traversePostorder(Node* node);
 /**
  *  Traverses/goes through a tree UNDER 'node'
  *  in a PREORDER way using a stack.
+ *
+ *  Process:
+ *  Visit the root node, recurisve left, then recursive right
  *
  *   @param   node  -  Current node to process
  *   @see     visit(...)

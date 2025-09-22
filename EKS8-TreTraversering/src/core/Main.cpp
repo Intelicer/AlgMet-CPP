@@ -6,7 +6,11 @@ using namespace std;
 using namespace std;
 
 int main() {
-    Node* root = buildTree();
+    //return the start 0
+    Node* root = buildTree(0);
+
+    //to make inorder work give it the last node on the left
+    Node* root2 = buildTree(6);
 
     cout << "\n\nPreorder traversal:\n\t";
     traversePreorder(root);
