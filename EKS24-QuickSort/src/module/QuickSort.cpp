@@ -76,7 +76,3 @@ void quickSort(char arr[], const int left, const int right) {
         quickSort(arr, index + 1, right);  //  Sort right half
     }
 }
-
-void start() {
-
-}
