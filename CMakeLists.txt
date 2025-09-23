@@ -20,5 +20,6 @@ add_subdirectory ("EKS9-EnkelRekursjon")
 add_subdirectory ("EKS10-3xRecursion")
 add_subdirectory ("EKS11-GrafikkRekursjon")
 add_subdirectory ("EKS12-RekursivTreTraversering")
+add_subdirectory ("EKS24-QuickSort")
 
 # add_subdirectory ("Oblig2")  # Commented out - not ready yet
