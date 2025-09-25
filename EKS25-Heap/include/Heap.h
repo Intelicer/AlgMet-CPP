@@ -69,8 +69,8 @@ private:
 public:
     Heap(const int len = 200) {   //  Initializing constructor:
         data = new T[len];  length = len;  count = 0;
-        sentinelKey = std::numeric_limits<T>::max();
-        //            std::cout << "\n\nsentinelKey:  " << (int)sentinelKey << "\n\n";
+        sentinelKey = numeric_limits<T>::max();
+        //            cout << "\n\nsentinelKey:  " << (int)sentinelKey << "\n\n";
     }
 
 
@@ -85,7 +85,7 @@ public:
 
     void display() const {           //  Prints out the ENTIRE heap content:
         for (int i = 1; i <= count; i++) {
-            std::cout << ' ' << data[i];
+            cout << ' ' << data[i];
         }
     }
 
@@ -123,7 +123,7 @@ public:
             upHeap(count);           //  Possibly move up (upHeap).
         }
         else {                    //  There is NO space:
-            std::cout << "\nHeap is full with " << length
+            cout << "\nHeap is full with " << length
                 << " elements (including sentinel key)!\n\n";
         }
     }
@@ -137,7 +137,7 @@ public:
             return value;           //  Return the first (stored away).
         }
         else {                   //  Heap IS empty:
-            std::cout << "\nHeap is completely empty - nothing in 'remove'!\n\n";
+            cout << "\nHeap is completely empty - nothing in 'remove'!\n\n";
             return sentinelKey;
         }
     }
