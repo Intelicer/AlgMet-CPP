@@ -70,7 +70,7 @@ public:
     Heap(const int len = 200) {   //  Initializing constructor:
         data = new T[len];  length = len;  count = 0;
         sentinelKey = numeric_limits<T>::max();
-        //            cout << "\n\nsentinelKey:  " << (int)sentinelKey << "\n\n";
+        //cout << "\n\nsentinelKey:  " << (int)sentinelKey << "\n\n";
     }
 
 
@@ -78,8 +78,12 @@ public:
 
     //  Changes 'data[keyNr]'  to  'newValue':
     void change(const int keyNr, const T newValue) {
-
-        //  MAKE IMPLEMENTATION  in connection with Exercise no.15
+        if (count > 0) {            //  Heap is NOT empty:
+            data[keyNr] = newValue;
+        }
+        else {                   //  Heap IS empty:
+            cout << "\nHeap is completely empty - nothing in 'extract'!\n\n";
+        }
     }
 
 
@@ -112,8 +116,15 @@ public:
 
 
     void extract(const int keyNr) {  // Deletes element no.'keyNr' from heap:
+ 
+        if (count > 0) {            //  Heap is NOT empty:
+            data[keyNr] = data[count--];   //  Move very last element ALL the way front.
+            downHeap(data, count, keyNr);  //  DownHeap this one.
+        }
+        else {                   //  Heap IS empty:
+            cout << "\nHeap is completely empty - nothing in 'extract'!\n\n";
+        }
 
-        //  MAKE IMPLEMENTATION  in connection with Exercise no.15
     }
 
 
