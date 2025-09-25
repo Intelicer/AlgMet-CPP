@@ -27,12 +27,14 @@ int partition(char arr[], const int left, const int right) {
         char pivot;                     //  The pivot element.
 
         pivot = arr[right];             //  Initialize with RIGHT element.
-        i = left - 1;                     //  Indices initialized just
+        i = left - 1;                   //  Indices initialized just
         j = right;                      //    outside the interval.
+
         //  NOTE: 'i' and 'j' increment/decrement BEFORE use.
         //        They stop on the correct indices
         //        without "skipping" too far.
-//                            display("\nBefore:", arr, left, right);
+        //  display("\nBefore:", arr, left, right);
+
         while (true) {                  //  Loop until break:
             //  Search for GREATER OR EQUAL:
             while (arr[++i] < pivot) {
@@ -43,8 +45,8 @@ int partition(char arr[], const int left, const int right) {
                 ;                       //  Empty body !!!
             }
 
-            //                             cout << "i: " << i << "  j: " << j << "   - "
-            //                                  << ((i < j) ? "Swap" : "BREAK") << '\n';
+            //  cout << "i: " << i << "  j: " << j << "   - "
+            //                << ((i < j) ? "Swap" : "BREAK") << '\n';
             if (i >= j) {
                 break;                  //  Indices have met/crossed.
             }
@@ -54,7 +56,8 @@ int partition(char arr[], const int left, const int right) {
         swapChars(arr[i], arr[right]);  //  Finally swap pivot
         //    with the very rightmost element
         //    in the LEFT HALF (where 'i' is).
-//                             display("After:", arr, left, right);
+        // display("After:", arr, left, right);
+
         return i;                       //  Return pivot’s new position
     }
     return 0;                           //  Less than two elements → dummy.
