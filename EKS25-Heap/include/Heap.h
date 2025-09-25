@@ -80,6 +80,7 @@ public:
     void change(const int keyNr, const T newValue) {
         if (count > 0) {            //  Heap is NOT empty:
             data[keyNr] = newValue;
+            //testing out now finished
         }
         else {                   //  Heap IS empty:
             cout << "\nHeap is completely empty - nothing in 'extract'!\n\n";
@@ -118,8 +119,18 @@ public:
     void extract(const int keyNr) {  // Deletes element no.'keyNr' from heap:
  
         if (count > 0) {            //  Heap is NOT empty:
-            data[keyNr] = data[count--];   //  Move very last element ALL the way front.
-            downHeap(data, count, keyNr);  //  DownHeap this one.
+            //data[keyNr] = data[count--];   //
+            //for (int i = 1; i <= count; i++) {
+            //    if (i != count) {
+            //        T t = data[i + 1];
+            //        data
+            //    }
+
+            //}
+            //downHeap(data, count, keyNr);  //  DownHeap this one.
+            
+
+            //testing out now finished
         }
         else {                   //  Heap IS empty:
             cout << "\nHeap is completely empty - nothing in 'extract'!\n\n";

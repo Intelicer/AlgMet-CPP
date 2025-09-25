@@ -53,6 +53,8 @@
    cout << "\nInsert 3 :  "; 
    heap.display(); 
 
+
+
    cout << "\n\n\nTesting two self-made functions from exercise no.15:\n";
    heap.change(4, 5); 
    cout<<"\nChange #4 to 5: "; 
@@ -71,9 +73,9 @@
    cout<<"\nExtract #2:   ";   
    heap.display(); 
 
-   heap.extract(1);   
-   cout<<"\nExtract #1:   ";   
-   heap.display();
+   //heap.extract(1);   
+   //cout<<"\nExtract #1:   ";   
+   //heap.display();
 
 
 
