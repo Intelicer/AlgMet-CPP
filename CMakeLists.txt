@@ -22,5 +22,8 @@ add_subdirectory ("EKS11-GrafikkRekursjon")
 add_subdirectory ("EKS12-RekursivTreTraversering")
 add_subdirectory ("EKS24-QuickSort")
 add_subdirectory ("EKS25-Heap")
+add_subdirectory ("EKS27-Searching")
+add_subdirectory ("EKS28-BinarySearchTree")
+
 
 # add_subdirectory ("Oblig2")  # Commented out - not ready yet
