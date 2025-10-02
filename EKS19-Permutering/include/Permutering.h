@@ -1,28 +1,33 @@
-#pragma once
 /**
- *   Program example no. 19 – Permutation (reordering / swapping positions).
+ *  Program Example No. 20 - Number placement (under certain rules) in a grid.
  *
- *   The example shows how to reorder in EVERY conceivable way ALL elements
- *   in an (int) array.
- *   N DISTINCT elements can be permuted in N! different ways.
+ *  For the program’s functionality see:  PermutationExample.pdf
  *
- *   More explanation of the algorithm/functionality:  Permutering.pdf
+ *  The example is ALMOST IDENTICAL to EKS_19_Permutation.cpp,
+ *  except that:
+ *     - the function 'hasRightSum(...)' is new
+ *     - the content of 'permute' is slightly extended (with if-statements)
+ *     - 'displayArray' is slightly rewritten
  *
- *   For a visual display of all (recursive) function calls with
- *   int-arrays "123" and "1234", see:
- *      - Eks19_(recursive)_function_calls_with_array123.pdf   and
- *      - Eks19_(recursive)_function_calls_with_array1234.pdf
- *   Approximately the same can be observed by removing the four '//'
- *   in front of the 'cout' statements inside the functions 'printArray' and 'permute'
+ *  (This was problem no. 5 on the exam 1994-12-15 in LO164A-Algorithmic Methods)
  *
- *   @file     EKS_19_Permutering.CPP
- *   @author   Frode Haug, NTNU
+ *  @file     EKS_20_PermutationExample.CPP
+ *  @author   Frode Haug, NTNU
  */
 
-#include <iostream>             //  cout
+
+#include <iostream>                 //  cout
+#include <iomanip>                  //  setw
 using namespace std;
 
-const int N = 4;                       ///<  Length of the array.
+
+const int N = 16;                   ///<  Array length.
+
+extern int gSolutionCount;                 ///<  Number of solutions found (so far).
+//    There are 7040 solutions (including
+//      mirrorings and rotations).
+//    There are 416 solutions when '1' is
+//      fixed in the upper-left corner.
 
 
 /**
@@ -34,32 +39,43 @@ const int N = 4;                       ///<  Length of the array.
 void swapValues(int& value1, int& value2);
 
 /**
- *  Prints the ENTIRE contents of the array 'arr'.
+ *  Prints the ENTIRE content of array 'arr'.
  *
- *  @param   arr  -  The array whose entire contents will be printed
+ *  @param   arr  -  The array whose entire content will be printed
  *  @param   n    -  Number of elements in the array (last used index is n-1)
  */
-void printArray(const int arr[], const int n);
+void displayArray(const int arr[], const int n);
+
 
 /**
- *  Recursively generates ALL possible permutations of the contents of 'arr'.
+ *  Recursively generates ALL possible permutations of 'arr' content.
  *
- *  @param   arr  -  The array to be permuted
- *  @param   i    -  The index to which ALL SUBSEQUENT values will be moved
+ *  @param   arr  -  The array to permute
+ *  @param   i    -  The index that ALL SUBSEQUENT values should be moved to
  *  @param   n    -  Number of elements in the array (last used index is n-1)
  *  @see     swapValues(...)
- *  @see     printArray()
+ *  @see     displayArray()
+ *  @see     hasRightSum(...)
  *  @see     rotateLeft(...)
  */
 void permute(int arr[], const int i, const int n);
 
 
+
 /**
- *  Left-rotates a portion of the array.
+ *  Checks whether 'arr' satisfies the requirements described in PermutationExample.pdf.
  *
- *  @param   arr  -  The array whose (part of) contents will be left-rotated
+ *  @param    arr  -  The array to check for 34-sums
+ *  @param    n    -  The index to check BACKWARDS from
+ *  @return   Whether ALL 10 row/column/diagonal sums are 34 or not
+ */
+bool hasRightSum(int arr[], int n);
+
+/**
+ *  Left-rotates part of an array’s content.
+ *
+ *  @param   arr  -  The array whose (part of) content is left-rotated
  *  @param   i    -  Lowest index to be left-rotated
  *  @param   n    -  'n-1' is the highest index to be left-rotated
  */
 void rotateLeft(int arr[], const int i, const int n);
-
