@@ -35,6 +35,8 @@ add_subdirectory ("EKS24-QuickSort")
 add_subdirectory ("EKS25-Heap")
 add_subdirectory ("EKS27-Searching")
 add_subdirectory ("EKS28-BinarySearchTree")
+add_subdirectory ("EKS29-Hashing")
+add_subdirectory ("EKS30-DFS-BFS")
 add_subdirectory("Testing")
 
 # add_subdirectory ("Oblig2")  # Commented out - not ready yet

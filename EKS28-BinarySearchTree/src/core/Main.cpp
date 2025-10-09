@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     BST <char, string> bst;
 
-    bst.insEKSert('L', "Liam");     /*  Builds the search tree (inside 'BST'):  */
+    bst.insert('L', "Liam");     /*  Builds the search tree (inside 'BST'):  */
     bst.insert('C', "Charlie");  /*               L                           */
     bst.insert('F', "Frank");    /*          /         \                      */
     bst.insert('T', "Tony");     /*        C             T                    */
